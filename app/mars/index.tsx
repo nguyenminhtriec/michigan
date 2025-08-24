@@ -39,7 +39,7 @@ export default function PhotosGrid() {
     };       
     return (
     <>   
-        <View style={{flex: 1, alignItems:'center', justifyContent:'center', gap: 16, paddingTop: 8}}>
+        <View style={{flex: 1, alignItems:'center', justifyContent:'center', gap: 16, paddingTop: 8, backgroundColor:'#18a'}}>
             { Platform.OS === 'web' ?
                 <WebDatePicker 
                     onChange={(e) => setEarthDate(e.target.value)}

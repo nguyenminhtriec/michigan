@@ -6,8 +6,8 @@ export default function RootLayout() {
     <>
       <Stack screenOptions={{headerShown: false}}>
         {/* <Stack.Screen name='(tabs)' options={{headerShown: false, title: 'Dashboard'}} /> */}
-        {/* <Stack.Screen name='mars' options={{headerShown: false, title: 'Mars'}} /> 
-        <Stack.Screen name='books' options={{headerShown: false, title: 'Books'}} />        */}
+        {/* <Stack.Screen name='mars' options={{ headerShown: false, title: 'Mars'}} />  */}
+        {/*<Stack.Screen name='books' options={{headerShown: false, title: 'Books'}} />        */}
       </Stack>
       <StatusBar style='light' />
     </>    

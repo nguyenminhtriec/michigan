@@ -15,7 +15,7 @@ export default function BookDetails() {
         const fullDescription = selectedBook.volumeInfo.description || '';
         const length = fullDescription.length;
         const dots = " . . .   (Source: Publisher)";
-        if (length === 0) return '';
+        if (length === 0) return 'No introduction availlable.';
         if (length > 1000) return  fullDescription.slice(0, length/5) + dots;
         if (length > 500) return fullDescription.slice(0, length/3) + dots;
         if (length > 100) return fullDescription.slice(0, length/2) + dots;
@@ -48,8 +48,8 @@ export default function BookDetails() {
             </View>
             <ScrollView style={{flex:1}}>
                 {isShowingDesc 
-                    ?  <Text>{selectedBook.volumeInfo.description}</Text> 
-                    :  <Text>{getShortDescription()}</Text>}
+                    ?  <Text style={styles.textNormal}>{selectedBook.volumeInfo.description}</Text> 
+                    :  <Text style={styles.textNormal}>{getShortDescription()}</Text>}
                 {isShowingDesc ? <Text style={{ textAlign:'right'}}>Source: Publisher</Text> : ''}
             </ScrollView>
             
@@ -72,14 +72,19 @@ const styles = StyleSheet.create({
         flex:1, gap: 8
     },
     textBold: {
-        textOverflow:'auto',
-        textAlign:'auto',
+        flexWrap:'wrap',
+        wordWrap:'wrap',
         fontWeight:'bold'
     },
     textSemiBold: {
-        textOverflow:'auto',
-        textAlign:'auto',
+        flexWrap:'wrap',
+        wordWrap:'wrap',
         fontWeight:'500'
+    },
+    textNormal: {
+        fontSize:14,
+        fontWeight:'400',
+        lineHeight: 18,
     }
     
 });

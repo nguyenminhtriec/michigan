@@ -7,6 +7,7 @@ import { MarsPhoto } from "@/lib/mars";
 import { FontAwesome } from "@expo/vector-icons";
 
 
+
 export default function MarsLayout() {
     const [selectedPhoto, setSelectedPhoto] = useState<MarsPhoto>();
     return (
@@ -19,10 +20,16 @@ export default function MarsLayout() {
                     headerTintColor:'#333',
                     headerRight: () => 
                     <Link href='/'>
-                        <FontAwesome style={{paddingHorizontal: 8}} name='home' size={24}/>
+                        <FontAwesome style={{paddingHorizontal: 8}} name='home' size={24} color='#203060'/>
                     </Link>
                 }} />
-                <Text style={{textAlign: 'center', color:'blue'}}>This Screen is rendered in Mars Layout</Text>              
+                
+                <Text style={{textAlign: 'center', color:'#102030', marginVertical:8}}>
+                    {'**Photos extracted from '}
+                    <Link href='https://api.nasa.gov' >
+                        <Text style={{color:'blue', fontStyle:'italic', textDecorationStyle:'solid'}}>NASA Open API</Text>  
+                    </Link>
+                </Text>              
             </MarsContext>
         </>
     )

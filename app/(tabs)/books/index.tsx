@@ -40,7 +40,7 @@ export default function Books() {
     console.log("Books retrieved:", books.length, books[0]);    
 
     return (    
-        <View style={{flex: 1, alignItems:'center', justifyContent:'center', gap: 8, paddingTop: 8, backgroundColor: '#6ab'}}>
+        <View style={{flex: 1, alignItems:'center', justifyContent:'center', gap: 8, paddingTop: 8, backgroundColor: '#0369e1'}}>
             <View style={{ 
                 flexDirection:'row', 
                 justifyContent:'space-between', 
@@ -55,26 +55,26 @@ export default function Books() {
                     placeholderTextColor='#dcc'
                     style={{ minWidth:320, padding: 4, fontSize: 16}} />
                 <Pressable onPress={() => setQuery('')} style={{width:32, height:32, padding:4, borderRadius:4}}> 
-                    <Ionicons name='trash' size={24} />
+                    <Ionicons name='trash' size={20} />
                 </Pressable>
                 <Pressable onPress={fetchBooks} style={{width:32, height:32, padding:4, borderRadius:4}}> 
                     <Ionicons name='search' size={24} />
                 </Pressable>    
             </View> 
            
-            <FlatList numColumns={2} style={{flex: 1, minWidth: 400, padding: 8, backgroundColor:'#08a8'}}
+            <FlatList numColumns={2} style={{flex: 1, width: 400, padding: 8, backgroundColor:'#7dd3fc'}}
                 data={books}
                 keyExtractor={book => book.id}
                 renderItem={({item}) => (
-                    <View style={{padding: 4}}> 
-                    <Pressable onPress={() => {
+                    // <View style={{padding: 4}}> 
+                    <Pressable style={{padding: 4}} onPress={() => {
                         handleBookClick(item);
                     }}>
                         <Image 
                             source={{uri: item.volumeInfo.imageLinks?.thumbnail}} alt='Book image'
-                            style={{minWidth:180, minHeight:270}} resizeMode='contain'  />
+                            style={{width:184, height:270}} resizeMode='stretch'  />
                     </Pressable>
-                    </View>
+                    // </View>
                 )}>
             </FlatList>
         </View>            
